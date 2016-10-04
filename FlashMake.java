@@ -1,5 +1,4 @@
 package Flashmake;
-//import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -16,13 +15,7 @@ import org.jsoup.select.Elements;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
-//import java.io.BufferedReader;
-//import java.io.IOException;
-//import java.io.InputStreamReader;
-//import java.io.InputStream;
 import java.util.Scanner;
-
-
 
 public class FlashMake {
 	public static String rFile(String file){
@@ -100,8 +93,7 @@ public class FlashMake {
 						return flipped;
 					}
 					catch(NullPointerException e){
-						System.out.println("No matches");
-						//System.out.println(nextLine + "\n" + flipped[1]);
+						System.out.println("No matches: " + nextLine + "\n" + flipped[1]);
 						return flipped;
 					}
 				}
@@ -133,7 +125,7 @@ public class FlashMake {
 			}
 			else	combine += Character.toString(z);
 			if((k[k.length-1] == z) && (!combine.equals(""))){
-				System.out.println("Final");
+				//System.out.println("Final"); prints final resul
 				kList.add(combine);
 			}
 		}
@@ -158,13 +150,12 @@ public class FlashMake {
 	}
 	
 	public static void main(String[] args) throws IOException{
-		//String file = "D:\Downloads\6.25 定義ない単語 - Sheet1.csv";
-		//byte[] buffer = new byte[1024];
+		// example file: "6.25 定義ない単語 - Sheet1.csv";
 		Scanner sc = new Scanner(System.in);
 		String fName = sc.next();
 		sc.close();		
-		//System.out.println(fName);
+		System.out.println(fName);
 		makeFlash(fName);
-		//br.close();
+	
 	}
 }
